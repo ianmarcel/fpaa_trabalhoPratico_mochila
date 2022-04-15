@@ -21,6 +21,8 @@ public class UtilLs {
 		return dados;
 	}
 
+	//testar com os valores do pdf primeiro(criamos 5 itens)
+	//criamos um vetor com 5 itens e ignoramos por enquanto o itemMochila q dps é facil
 	public int[] geradorDeItens(int capacidade, int quantidadeDeItens) {
 		return null;
         
