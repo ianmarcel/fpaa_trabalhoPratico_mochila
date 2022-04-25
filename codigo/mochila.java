@@ -1,26 +1,38 @@
+import java.util.ArrayList;
 import java.util.List;
 
-import trabalho_mochila.ItemMochila;
-
 public class mochila {
-    public static final int  CAPACIDADE_MAX=15;//kçeyann sugeriu passar no construtor 
+    public static final int  CAPACIDADE_MAX=10;//kçeyann sugeriu passar no construtor 
     private int pesoAtualMochila;
     List<ItemMochila> listaDeitens;
 
-    //e ia chamando o adicionar dentro do for(adicionar varios itens ate estourar)
+    //IDEIAS :
+
+  
+     
+    
+    //talvez o metodo forca bruta tenha permutacao(talvez nao)
+
+
+
+    //ideia:ia chamando o adicionar dentro do for(adicionar varios itens ate estourar)
     public void adicionar(ItemMochila item){
-        //lembrando q esse item tem um peso(mais importante aqui) e um valor
         if(item.getPeso()+this.pesoAtualMochila < mochila.CAPACIDADE_MAX){
-            this.pesoAtualMochila = pesoAtualMochila +item.getPeso();
+            this.pesoAtualMochila += item.getPeso();
             listaDeitens.add(item);
         }
-        //talvez o metodo forca bruta tenha permutacao(nao)
+     
     }
 
-    public Mochila(){
+    public mochila(){
        this.pesoAtualMochila=0;
+       this.listaDeitens = new ArrayList<ItemMochila>();
     }
-    public Mochila(int capacidadeMaximaVCqueEscolher){ //por enquanto nao
-
+    public mochila(int capacidadeMaximaVCqueEscolher){ //por enquanto nao
+        this.listaDeitens = new ArrayList<ItemMochila>();
     }
+    public List<ItemMochila> getListaDeItens(){
+        return this.listaDeitens;
+    }
+   
 }
