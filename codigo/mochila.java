@@ -4,15 +4,13 @@ import java.util.List;
 public class mochila {
     public static final int CAPACIDADE_MAX = 10;
     private int pesoAtualMochila;
-    List<ItemMochila> listaDeitens;
-    public int capacidadeAlteravel; // Dps troca pra private
+    private List<ItemMochila> listaDeitens;
+    private int capacidadeAlteravel; // Dps troca pra private
 
-    // IDEIAS :
-    // talvez o metodo forca bruta tenha permutacao(talvez nao)
-    // ideia:ia chamando o adicionar dentro do for(adicionar varios itens ate
-    // estourar)
+  
     public void adicionar(ItemMochila item) {
-        if (item.getPeso() + this.pesoAtualMochila < mochila.CAPACIDADE_MAX) {
+        //if (item.getPeso() + this.pesoAtualMochila < mochila.CAPACIDADE_MAX) {
+            if (item.getPeso() + this.pesoAtualMochila < this.capacidadeAlteravel) {
             this.pesoAtualMochila += item.getPeso();
             listaDeitens.add(item);
         }

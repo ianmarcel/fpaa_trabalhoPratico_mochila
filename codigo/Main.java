@@ -4,9 +4,9 @@ public class Main {
   public static void main(String args[]) {
     int capacidadeAEscolher = 10;
     int quantItems = 4;
-    mochila m = new mochila(10);
+    mochila m = new mochila(capacidadeAEscolher);
 
-    ItemMochila[] item = new ItemMochila[quantItems];// So trocar esse 5 pode virar um TAM
+    ItemMochila[] item = new ItemMochila[quantItems];
 
     // instanciar cada item
     for (int i = 0; i < item.length; i++) {
@@ -27,6 +27,12 @@ public class Main {
     for (int index = 0; index < item.length; index++) {
       m.adicionar(item[index]);
     }
+    
+   
+    System.out.println();
+    //imprimir os intens que estao na mochila
+    m.getListaDeItens().forEach(System.out::println);
+
 
   }
 }
