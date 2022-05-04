@@ -66,7 +66,5 @@ class Knapsack {
         int n2 =val2.length;
         System.out.println(knapSack(W2, wt2, val2, n2));
 
-        // no ultimo caso pode copiar o codigo dele e so mudar as variaves(pq tu ja tem
-        // varias coisas(itemMochila,...))
     }
 }
