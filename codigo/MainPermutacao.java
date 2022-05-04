@@ -9,9 +9,9 @@ public class MainPermutacao {
     public static void main(String args[]) {
         int capacidadeAEscolher = 10;
         int quantItems = 4;
-        mochila m = new mochila(capacidadeAEscolher); 
+       // mochila m = new mochila(capacidadeAEscolher); 
         ItemMochila[] ListaDeitens = new ItemMochila[quantItems];
-       // int[] itensMatriz_Combinacoes = new int[quantItems]; //pq so o peso q me interessa
+       int[][] itensMatriz_Combinacoes = new int[quantItems][quantItems]; //pq so o peso q me interessa
         //talvez vai ser do tipo ItemMochilaMesmo por causa do valor do item
        // int somadorDePesos=0;//vai somar os getPesos de cada combinacao de itens
 
@@ -24,6 +24,13 @@ public class MainPermutacao {
         ListaDeitens = UtilLs.geraVetor(quantItems, false, capacidadeAEscolher);
         //ex: nesse caso criei 4 itens cada um com seu peso E armazenei esses itens no Vetor itens(da linha 13)
         //tenho que combinar esses itens(o item 1.getPeso com o 2 , o 1 com o 3)
+        
+        //*se for combinacao mesmo(complica) /salvei uns links / meu trabalho em grafo é parecido
+        for(int i=0;i<ListaDeitens.length;i++){
+            for (int j = 0; j < ListaDeitens.length; j++) {
+                itensMatriz_Combinacoes[i][j]= ListaDeitens[i].getPeso(); 
+            }
+        }
 
 
     }

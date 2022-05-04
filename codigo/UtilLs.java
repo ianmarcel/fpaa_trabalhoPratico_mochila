@@ -18,10 +18,15 @@ public class UtilLs {
 
 		// Descricao :Primeiro ele gera Numeros na Ordem(na ta usando o random ainda)
 		for (int i = 0; i < dados.length; i++) {
-			dados[i].setPeso(i + 1); //dps volta (multiplica por 5)
+			//dados[i].setPeso(i + 1); //dps volta (multiplica por 5)
+			//dados[i].setValor(((i + 1) * 5)); //com 1 pega
+			dados[i].setValor((i+1)*5);
 			somaPeso += dados[i].getPeso();
-			dados[i].setValor(((i + 1) * 5));
-			System.out.println("soma peso = :" + somaPeso);
+			//dados[i].setValor(((i + 1) * 4)); //com 5 pega
+			dados[i].setPeso((i+1)*2);
+
+			
+			//System.out.println("soma peso = :" + somaPeso);
 
 			if (somaPeso >= capacidade * 3) {
 				i = dados.length;
