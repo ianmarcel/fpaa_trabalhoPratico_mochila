@@ -10,7 +10,11 @@ public class mochila {
   
     public void adicionar(ItemMochila item) {
         //if (item.getPeso() + this.pesoAtualMochila < mochila.CAPACIDADE_MAX) {
-            if (item.getPeso() + this.pesoAtualMochila < this.capacidadeAlteravel) {
+            if (item.getPeso() + this.pesoAtualMochila <= this.capacidadeAlteravel) {
+                // é <= sim pq se for menor quando ele somar a capacidade Restante(ex:4) com o proximo item
+                 //(ex: tem peso 6) Ele iria fazer 10<10 falso(e ta errado pq dava sim pra esse item) 
+
+                 //Isso foi a ultima coisa que troquei se der erro(duvido) volta pro <
             this.pesoAtualMochila += item.getPeso();
             listaDeitens.add(item);
         }

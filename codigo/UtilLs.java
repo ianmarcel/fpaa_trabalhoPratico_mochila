@@ -20,11 +20,11 @@ public class UtilLs {
 		for (int i = 0; i < dados.length; i++) {
 			//dados[i].setPeso(i + 1); //dps volta (multiplica por 5)
 			//dados[i].setValor(((i + 1) * 5)); //com 1 pega
-			dados[i].setValor((i+1)*5);
+			dados[i].setValor((i+2)*5);//5 É OQ VOU USAR  
 			somaPeso += dados[i].getPeso();
 			//dados[i].setValor(((i + 1) * 4)); //com 5 pega
-			dados[i].setPeso((i+1)*2);
-
+			dados[i].setPeso((i+1)*2);//2 É OQ VOU USAR
+            
 			
 			//System.out.println("soma peso = :" + somaPeso);
 
@@ -35,8 +35,8 @@ public class UtilLs {
 		}
 		if (!ordenado) {// DEPOIS(SEGUNDO) ELE DESORDENA ESSES PESOS(Q SAO INTEIROS MESMO TA CERTO)
 			for (int i = 0; i < dados.length * 3; i++) {// esse *3 ja tava aqui no do caram
-				int pos1 = sorteio.nextInt(dados.length);
-				int pos2 = sorteio.nextInt(dados.length);
+				int pos1 = sorteio.nextInt(dados.length);//é teste APAGA
+				int pos2 = sorteio.nextInt(dados.length);//é teste APAGA
 				trocar(dados, pos1, pos2);
 			}
 		}
@@ -62,5 +62,28 @@ public class UtilLs {
 
 		}
 	}
+	//------------------------------------------
+	static public int particao(ItemMochila[] dados, int inicio, int fim){
+        int posicao = inicio-1;
+        double pivot = dados[fim].getRazao();
+        for (int i = inicio; i < fim; i++) {
+            if(dados[i].getRazao()>pivot){
+                posicao++;
+                trocar(dados, posicao, i);
+            }
+        }
+        posicao++;
+        trocar(dados, posicao, fim);
+        return posicao;
+    }
+    static public void quicksort(ItemMochila[] dados, int inicio, int fim){
+        if(inicio>=fim) //talvez seja fim maior que inicio
+            return;
+        else{
+            int particao = particao(dados, inicio, fim);
+            quicksort(dados, inicio, particao-1);
+            quicksort(dados, particao+1, fim);
+        }
+    }
 
 }

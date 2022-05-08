@@ -1,5 +1,5 @@
 
-class Knapsack {
+class ForcaBruta {
 
     // A utility function that returns
     // maximum of two integers
@@ -8,31 +8,31 @@ class Knapsack {
     }
 
     // Returns the maximum value that
-    // can be put in a knapsack of
+    // can be put in a forcaBruta of
     // capacity W
-    static int knapSack(int W, int wt[], int val[], int n) {
+    static int forcaBruta(int W, int wt[], int val[], int n) {
         // Base Case
         if (n == 0 || W == 0)
             return 0;
 
         // If weight of the nth item is
-        // more than Knapsack capacity W,
+        // more than forcaBruta capacity W,
         // then this item cannot be included
         // in the optimal solution
         if (wt[n - 1] > W)
-            return knapSack(W, wt, val, n - 1);
+            return forcaBruta(W, wt, val, n - 1);
 
         // Return the maximum of two cases:
         // (1) nth item included
         // (2) not included
         else
             return max(val[n - 1]
-                    + knapSack(W - wt[n - 1], wt,
+                    + forcaBruta(W - wt[n - 1], wt,
                             val, n - 1),
-                    knapSack(W, wt, val, n - 1));
+                            forcaBruta(W, wt, val, n - 1));
     }
 
-    // Driver code
+    // PODE SEPARAR A MAIN DAQUI
     public static void main(String args[]) {
         int capacidadeAEscolher = 10;
         int quantItems = 4;
@@ -64,7 +64,9 @@ class Knapsack {
         int W2 = capacidadeAEscolher;
         //int n = val.length; //vai ser val2.lenght
         int n2 =val2.length;
-        System.out.println(knapSack(W2, wt2, val2, n2));
+        System.out.println(forcaBruta(W2, wt2, val2, n2));
 
+        // no ultimo caso pode copiar o codigo dele e so mudar as variaves(pq tu ja tem
+        // varias coisas(itemMochila,...))
     }
 }
