@@ -11,7 +11,8 @@ public class MainTeste {
         long tempoExecucao;
         //----------------------------------------------------
         do { //so pra testar em 1s
-            System.out.println("criando uma nova mochila com capacidade :"+j+" e um novo vetor de :"+j+" itens");
+            //  System.out.println(" mochila com capacidade :"+j+" e um novo vetor de :"+j+" itens");
+             System.out.println(" mochila com capacidade :"+j+" e :"+j+" itens");
             // mochila m = new mochila(capacidadeAEscolher);
             mochila m = new mochila(j);
             quantItems = j;
@@ -44,26 +45,29 @@ public class MainTeste {
             }
 
             System.out.println();
-            // imprimir os intens que estao na mochila
-            m.getListaDeItens().forEach(System.out::println);
+            // imprimir os intens que estao na mochila   *************************
+                           //m.getListaDeItens().forEach(System.out::println);
 
             tempoExecucao=(System.currentTimeMillis()-tempoExecucao);//n lembro se no lugar de millis é tempoFinal e se teria uma outra varivavel(desse jeito)chamada tempoInicial
             if(tempoExecucao>100){
-                System.out.println("ha ha hateste ");
+              //  System.out.println("ha ha hateste ");
             }
             
             System.out.println("tempo em milisegundos ="+tempoExecucao); // prints a Unix timestamp in milliseconds
             //System.out.println("tempo em seg ="+tempoExecucao / 1000); // prints the same Unix timestamp in seconds
-            j=j+100; //pode ao invez de fazer os itens crescenrem de 1 em 1 pode ser de 5 em 5
-        
+            
+           //quick : j=j+500000; //pode ao invez de fazer os itens crescenrem de 1 em 1 pode ser de 5 em 5
+            j = j+2000;  //bubble tem q ser 1000 a 2000 pq 25000 ACABA
         
         
         
         
              //ao invez de j ser pra qtdItens e capacidadeM faz um L(aumentando de 50 em 50) pra capacidade
                 //ai esse j seria a resposta da letra a
-            }while(j<26000); //Perto de 25000 ja leva 4s(com o bolha)
-        //while(j<100000);
+            }while( tempoExecucao<4000);
+            //while( tempoExecucao<4000 || j<10000000  ); //Perto de 25000 ja leva 4s(com o bolha) e 540 000 ou 600 000(bublesort)
+        //while(j<10000000); PRO QUICKSORT
+        //while(j<25000);  PRO BUBBLE
         //while (tempoExecucao < 800);
     }
 }
