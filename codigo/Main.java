@@ -34,6 +34,7 @@ public class Main {
     System.out.println();
     //imprimir os intens que estao na mochila
     m.getListaDeItens().forEach(System.out::println);
+    
 
 
   }
