@@ -3,28 +3,24 @@ public class MainTeste {
 
     public static void main(String args[]) {
 
-        //int capacidadeAEscolher; ta sendo passado por j(ele fica aumentando) Mas é so trocar o nome
+        int capacidade;
         int quantItems;
-       
-        //int contadorTempo = 0;
-        int j = 5; //pra n ficar de 5 em 5  MAS se der erro VOLTA PRA 1(n acho q vai precisar)
+        int j = 5;
         long tempoExecucao;
-        //----------------------------------------------------
-        do { //so pra testar em 1s
-            //  System.out.println(" mochila com capacidade :"+j+" e um novo vetor de :"+j+" itens");
-             System.out.println(" mochila com capacidade :"+j+" e :"+j+" itens");
-            // mochila m = new mochila(capacidadeAEscolher);
-            mochila m = new mochila(j);
+
+        do {
+
+            System.out.println(" mochila com capacidade :" + j + " e :" + j + " itens");
+            capacidade = j;
+            mochila m = new mochila(capacidade);// tava j
             quantItems = j;
             ItemMochila[] item = new ItemMochila[quantItems];
 
-            // instanciar cada item
             for (int i = 0; i < item.length; i++) {
                 item[i] = new ItemMochila();
             }
-            
-            //item = UtilLs.geraVetor(quantItems, false, capacidadeAEscolher);  ********
-            item = UtilLs.geraVetor(quantItems, false, j);
+
+            item = UtilLs.geraVetor(quantItems, false, capacidade); // tava j
             int tam = item.length;// pra usar no quicksort
             // item=UtilLs.geraVetor(4, false, 10);
             // testando(pode apagar esse for)
@@ -34,10 +30,9 @@ public class MainTeste {
             // System.out.println("razao : " + item[i].getRazao());
             // }
 
-
-             tempoExecucao=System.currentTimeMillis(); //dps declara ele la em cima
-             UtilLs.bolhaInvertido(item);
-            //UtilLs.quicksort(item, 0, tam - 1); // tem q ser tam-1 se n n pega
+            tempoExecucao = System.currentTimeMillis();
+            UtilLs.bolhaInvertido(item);
+            // UtilLs.quicksort(item, 0, tam - 1);
 
             System.out.println("\niten(s) adicionado(s) na mochila :");
             for (int index = 0; index < item.length; index++) {
@@ -45,29 +40,21 @@ public class MainTeste {
             }
 
             System.out.println();
-            // imprimir os intens que estao na mochila   *************************
-                           //m.getListaDeItens().forEach(System.out::println);
+            // imprimir os intens da mochila *************************
+            // m.getListaDeItens().forEach(System.out::println);
 
-            tempoExecucao=(System.currentTimeMillis()-tempoExecucao);//n lembro se no lugar de millis é tempoFinal e se teria uma outra varivavel(desse jeito)chamada tempoInicial
-            if(tempoExecucao>100){
-              //  System.out.println("ha ha hateste ");
+            tempoExecucao = (System.currentTimeMillis() - tempoExecucao);
+
+            if (tempoExecucao > 100) {
+                // System.out.println("ha ha hateste ");
             }
-            
-            System.out.println("tempo em milisegundos ="+tempoExecucao); // prints a Unix timestamp in milliseconds
-            //System.out.println("tempo em seg ="+tempoExecucao / 1000); // prints the same Unix timestamp in seconds
-            
-           //quick : j=j+500000; //pode ao invez de fazer os itens crescenrem de 1 em 1 pode ser de 5 em 5
-            j = j+2000;  //bubble tem q ser 1000 a 2000 pq 25000 ACABA
-        
-        
-        
-        
-             //ao invez de j ser pra qtdItens e capacidadeM faz um L(aumentando de 50 em 50) pra capacidade
-                //ai esse j seria a resposta da letra a
-            }while( tempoExecucao<4000);
-            //while( tempoExecucao<4000 || j<10000000  ); //Perto de 25000 ja leva 4s(com o bolha) e 540 000 ou 600 000(bublesort)
-        //while(j<10000000); PRO QUICKSORT
-        //while(j<25000);  PRO BUBBLE
-        //while (tempoExecucao < 800);
+
+            System.out.println("tempo em milisegundos =" + tempoExecucao);
+
+            // quick : j=j+500000;
+            j = j + 2000; // bubble tem q ser 1000 a 2000 pq 25000 ACABA
+
+        } while (tempoExecucao < 4000);
+
     }
 }
