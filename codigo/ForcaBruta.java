@@ -1,11 +1,8 @@
 
 public class ForcaBruta {
 
+   
     static int valorMaior(int num1, int num2) {
-        return (num1 > num2) ? num1 : num2;
-    }
-
-    static int valorMaior2(int num1, int num2) {
         if (num1 > num2) {
             return num1;
         } else {
@@ -31,7 +28,7 @@ public class ForcaBruta {
         }
     }
 
-    // PODE SEPARAR A MAIN DAQUI
+   
     public static void main(String args[]) {
         int capacidadeAEscolher = 10;
         int quantItems = 4;

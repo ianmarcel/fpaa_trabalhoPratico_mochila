@@ -30,7 +30,6 @@ public class ForcaBrutaTeste {
         }
     }
 
-    // PODE SEPARAR A MAIN DAQUI
     public static void main(String args[]) {
         int capacidadeAEscolher;
         int quantItems;
@@ -52,14 +51,13 @@ public class ForcaBrutaTeste {
         int vetorValores[] = new int[ListaDeitens.length]; 
         for (int i = 0; i < ListaDeitens.length; i++) {
             vetorValores[i]=ListaDeitens[i].getValor();
-            //System.out.println("Testanto o valor :"+val2[i]);
+           
         }
         
 
         int vetorPesos[] = new int[ListaDeitens.length];
         for (int i = 0; i < ListaDeitens.length; i++) {
             vetorPesos[i]=ListaDeitens[i].getPeso();
-            //System.out.println("Testanto o peso :"+wt2[i]);
         }
         
         int capacidade = capacidadeAEscolher; 
@@ -72,9 +70,7 @@ public class ForcaBrutaTeste {
         System.out.println(forcaBruta(capacidade, vetorPesos, vetorValores, tam));
         tempoExecucao=(System.currentTimeMillis()-tempoExecucao);
         
-        if(tempoExecucao>100){
-             // System.out.println("ha ha hateste ");
-          }
+        
          
         System.out.println();
         System.out.println("tempo em milisegundos ="+tempoExecucao);
@@ -82,7 +78,6 @@ public class ForcaBrutaTeste {
 
     }while(tempoExecucao<4000);
 
-     //Resultado é entre 250 e 275 no MAXIMO(N passa disso)
-     //entao o j é bom ir de 50 em 50 ou 25 em 25 E no while antigo Ate j<300
+     
     }
 }

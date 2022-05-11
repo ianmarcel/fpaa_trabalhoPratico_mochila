@@ -8,7 +8,7 @@ public class Main {
 
     ItemMochila[] item = new ItemMochila[quantItems];
 
-    // instanciar cada item
+   
     for (int i = 0; i < item.length; i++) {
       item[i] = new ItemMochila();
     }
