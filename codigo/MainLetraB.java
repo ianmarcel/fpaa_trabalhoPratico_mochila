@@ -4,11 +4,11 @@ public class MainLetraB{
     public static void main(String args[]) {
     
     
-        for(int j=0;j<3;j++){
-        System.out.println("teste "+j);
-        //275 é o valor encontrado por A
-      int capacidadeAEscolher = 10;
-      int quantItems = 10;
+        for(int j=0;j<10;j++){  //Esse vai ser 500
+                                               // System.out.println("teste "+j); *****VOLTA N APAGA
+        //275 é o valor encontrado por A(PODE TESTAR COM 10 SE QUISER(275 É MUITO RAPIDO TBM))
+      int capacidadeAEscolher = 275;
+      int quantItems = 275;
       mochila m = new mochila(capacidadeAEscolher);
   
       ItemMochila[] item = new ItemMochila[quantItems];
@@ -30,7 +30,7 @@ public class MainLetraB{
      // UtilLs.bolhaInvertido(item);
       UtilLs.quicksort(item, 0, tam-1); 
   
-      System.out.println("\niten(s) adicionado(s) na mochila :");
+           //System.out.println("\niten(s) adicionado(s) na mochila :");   *********VOLTA N APAGA
       for (int index = 0; index < item.length; index++) {
         m.adicionar(item[index]);
       }
@@ -38,10 +38,12 @@ public class MainLetraB{
      
       //System.out.println();
       //imprimir os intens que estao na mochila
-            m.getListaDeItens().forEach(System.out::println);
-            //m.getPesoAtual();
-           // System.out.println(m.getPesoAtual());
-            System.out.println("valor somado :"+m.getValorAtual());
+                             // m.getListaDeItens().forEach(System.out::println);   *****VOLTA N APAGA
+            
+           
+           // System.out.println("valor somado :"+m.getValorAtual()); *****VOLTA N APAGA
+           System.out.println(m.getValorAtual());
+
       
 
     }

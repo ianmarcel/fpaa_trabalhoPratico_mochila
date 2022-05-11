@@ -20,7 +20,7 @@ public class UtilLs {
 			dados[i].setValor((i + 2) * 5);
 			somaPeso += dados[i].getPeso();
 			dados[i].setPeso((i + 1) * 2);
-			
+			// System.out.println("soma peso = :" + somaPeso);
 
 			if (somaPeso >= capacidade * 3) {
 				i = dados.length;
