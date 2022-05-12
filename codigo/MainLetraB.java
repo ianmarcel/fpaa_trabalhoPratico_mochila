@@ -7,8 +7,8 @@ public class MainLetraB{
         for(int j=0;j<10;j++){  //Esse vai ser 500
                                                // System.out.println("teste "+j); *****VOLTA N APAGA
         //275 é o valor encontrado por A(PODE TESTAR COM 10 SE QUISER(275 É MUITO RAPIDO TBM))
-      int capacidadeAEscolher = 275;
-      int quantItems = 275;
+      int capacidadeAEscolher = 400;
+      int quantItems = 34; //E esse valor mesmo
       mochila m = new mochila(capacidadeAEscolher);
   
       ItemMochila[] item = new ItemMochila[quantItems];

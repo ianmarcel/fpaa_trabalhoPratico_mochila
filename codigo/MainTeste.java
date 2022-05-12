@@ -3,17 +3,19 @@ public class MainTeste {
 
     public static void main(String args[]) {
 
-        int capacidade;
-        int quantItems;
-        int j = 5;
+        int capacidade  = 200;
+        int quantItems  = 5;
+        //int j = 20 * capacidade; ///qtdItens
+        //int k = 100; //capacidade 
         long tempoExecucao;
 
         do {
 
-            System.out.println(" mochila com capacidade :" + j + " e :" + j + " itens");
-            capacidade = j;
+            System.out.println(" mochila com capacidade :" + capacidade + " e :" + quantItems + " itens");
+            // capacidade = j; 
+            //capacidade = k;
             mochila m = new mochila(capacidade);
-            quantItems = j;
+           // quantItems = j;
             ItemMochila[] item = new ItemMochila[quantItems];
 
             for (int i = 0; i < item.length; i++) {
@@ -42,7 +44,8 @@ public class MainTeste {
 
             System.out.println("tempo em milisegundos =" + tempoExecucao);
 
-             j=j+500000; //quick
+              // j=j+500000; //quick
+             quantItems ++;
             //j = j + 2000; //bubble
 
         } while (tempoExecucao < 4000);

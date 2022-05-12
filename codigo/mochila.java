@@ -9,14 +9,23 @@ public class mochila {
     private int capacidadeAlteravel; // Dps troca pra private
 
   
-    public void adicionar(ItemMochila item) {
+    public boolean adicionar(ItemMochila item) {
             if (item.getPeso() + this.pesoAtualMochila <= this.capacidadeAlteravel) {
             this.pesoAtualMochila += item.getPeso();
             this.valorAtualMochila += item.getValor();
             listaDeitens.add(item);
-        }
+            return true;
+            }
+            else {
+                return false;
+            }
 
-    }
+            
+
+            //mochila tem q ser bolean Tem q adicionar 1 por 1
+}
+
+    
 
     public mochila() {
         this.pesoAtualMochila = 0;

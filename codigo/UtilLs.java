@@ -1,6 +1,7 @@
 import java.util.Random;
 
-public class UtilLs {
+public  class UtilLs {
+   static	Random sorteio = new Random(42);
 	static void trocar(ItemMochila[] dados, int pos1, int pos2) {
 		ItemMochila aux = dados[pos1];
 		dados[pos1] = dados[pos2];
@@ -8,8 +9,11 @@ public class UtilLs {
 	}
 
 	static public ItemMochila[] geraVetor(int qtdItems, boolean ordenado, int capacidade) {
-		Random sorteio = new Random(42);
-		int somaPeso = 0;
+		
+		// int somaPeso = 0;
+		int somaPeso = capacidade * 3;
+		int mediaDosItens = somaPeso/qtdItems;  // n é double 
+
 		ItemMochila[] dados = new ItemMochila[qtdItems];
 		for (int i = 0; i < dados.length; i++) {
 			dados[i] = new ItemMochila();
@@ -17,14 +21,22 @@ public class UtilLs {
 
 		for (int i = 0; i < dados.length; i++) {
 
-			dados[i].setValor((i + 2) * 5);
-			somaPeso += dados[i].getPeso();
-			dados[i].setPeso((i + 1) * 2);
-			// System.out.println("soma peso = :" + somaPeso);
+			// dados[i].setValor((i + 2) * 5);
+			// somaPeso += dados[i].getPeso();
+			// dados[i].setPeso((i + 1) * 2);
 
-			if (somaPeso >= capacidade * 3) {
-				i = dados.length;
-			}
+			//o peso e o valor tava fixo  Usa um randon
+			dados[i].setPeso(1+ sorteio.nextInt(mediaDosItens*2));
+			dados[i].setValor(1+ sorteio.nextInt(50));
+			somaPeso += dados[i].getPeso();
+
+			// System.out.println("soma peso = :" + somaPeso);
+			// System.out.println("capacidade = :" + capacidade);
+
+
+			// if (somaPeso >= capacidade * 3) { // A LOGICA TA NA MOCHILA
+			// 	i = dados.length;
+			// }
 		}
 		if (!ordenado) {
 			for (int i = 0; i < dados.length * 3; i++) {
