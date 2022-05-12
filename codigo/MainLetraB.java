@@ -4,11 +4,11 @@ public class MainLetraB{
     public static void main(String args[]) {
     
     
-        for(int j=0;j<10;j++){  //Esse vai ser 500
+        for(int j=0;j<500;j++){  
                                                // System.out.println("teste "+j); *****VOLTA N APAGA
         //275 é o valor encontrado por A(PODE TESTAR COM 10 SE QUISER(275 É MUITO RAPIDO TBM))
       int capacidadeAEscolher = 400;
-      int quantItems = 34; //E esse valor mesmo
+      int quantItems = 34; //E esse valor mesmo(foi o q deu do forcaBruta)
       mochila m = new mochila(capacidadeAEscolher);
   
       ItemMochila[] item = new ItemMochila[quantItems];

@@ -6,48 +6,42 @@ public class mochila {
     private int pesoAtualMochila;
     private int valorAtualMochila;
     private List<ItemMochila> listaDeitens;
-    private int capacidadeAlteravel; // Dps troca pra private
+    private int capacidadeAlteravel;
 
-  
     public boolean adicionar(ItemMochila item) {
-            if (item.getPeso() + this.pesoAtualMochila <= this.capacidadeAlteravel) {
+        if (item.getPeso() + this.pesoAtualMochila <= this.capacidadeAlteravel) {
             this.pesoAtualMochila += item.getPeso();
             this.valorAtualMochila += item.getValor();
             listaDeitens.add(item);
             return true;
-            }
-            else {
-                return false;
-            }
+        } else {
+            return false;
+        }
 
-            
-
-            //mochila tem q ser bolean Tem q adicionar 1 por 1
-}
-
-    
+    }
 
     public mochila() {
         this.pesoAtualMochila = 0;
-        this.valorAtualMochila=0;
+        this.valorAtualMochila = 0;
         this.listaDeitens = new ArrayList<ItemMochila>();
     }
 
-    public mochila(int capacidadeMaximaVCqueEscolher) {
+    public mochila(int capacidadeAlteravel) {
         this.pesoAtualMochila = 0;
-        this.valorAtualMochila=0;
+        this.valorAtualMochila = 0;
         this.listaDeitens = new ArrayList<ItemMochila>();
-        this.capacidadeAlteravel = capacidadeMaximaVCqueEscolher;
+        this.capacidadeAlteravel = capacidadeAlteravel;
     }
 
     public List<ItemMochila> getListaDeItens() {
         return this.listaDeitens;
     }
 
-    public int getPesoAtual(){
+    public int getPesoAtual() {
         return this.pesoAtualMochila;
     }
-    public int getValorAtual(){
+
+    public int getValorAtual() {
         return this.valorAtualMochila;
     }
 

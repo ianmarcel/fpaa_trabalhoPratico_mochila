@@ -10,7 +10,7 @@ public  class UtilLs {
 
 	static public ItemMochila[] geraVetor(int qtdItems, boolean ordenado, int capacidade) {
 		
-		// int somaPeso = 0;
+		
 		int somaPeso = capacidade * 3;
 		int mediaDosItens = somaPeso/qtdItems;  // n é double 
 
