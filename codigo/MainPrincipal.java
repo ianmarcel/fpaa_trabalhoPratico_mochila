@@ -1,7 +1,7 @@
 public class MainPrincipal {
     public static void main(String args[]) {
         long tempoExecucao = 0;
-        int capacidade = 200;
+        int capacidade = 240;
         int quantItems = 5;
         ItemMochila[] itens;
 
@@ -29,7 +29,7 @@ public class MainPrincipal {
 
         for (int i = 0; i < 500; i++) {
             System.out.println("Iteração: " + (i+1));
-            itens = Utils.geraVetor((quantItems-1), false, capacidade);
+            itens = Utils.geraVetor((quantItems-2), false, capacidade);
 
             int fb = ForcaBruta.forcaBruta(capacidade, itens, itens.length);
             System.out.println("Forca Bruta: " + fb);

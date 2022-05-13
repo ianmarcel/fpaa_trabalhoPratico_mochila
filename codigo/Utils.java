@@ -1,8 +1,7 @@
 import java.util.Random;
 
 public  class Utils {
-   static	Random sorteio = new Random(42);
-
+    static Random sorteio = new Random(42);
 
 	static void trocar(ItemMochila[] dados, int pos1, int pos2) {
 		ItemMochila aux = dados[pos1];
@@ -12,8 +11,6 @@ public  class Utils {
 
 
 	static public ItemMochila[] geraVetor(int qtdItems, boolean ordenado, int capacidade) {
-		
-		
 		int somaPeso = capacidade * 3;
 		int mediaDosItens = somaPeso/qtdItems;  // n é double 
 
@@ -36,7 +33,4 @@ public  class Utils {
 		}
 		return dados;
 	}
-
-
-
 }
