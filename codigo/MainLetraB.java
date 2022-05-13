@@ -9,7 +9,7 @@ public class MainLetraB{
         //275 é o valor encontrado por A(PODE TESTAR COM 10 SE QUISER(275 É MUITO RAPIDO TBM))
       int capacidadeAEscolher = 400;
       int quantItems = 34; //E esse valor mesmo(foi o q deu do forcaBruta)
-      mochila m = new mochila(capacidadeAEscolher);
+      Mochila m = new Mochila(capacidadeAEscolher);
   
       ItemMochila[] item = new ItemMochila[quantItems];
   
@@ -18,7 +18,7 @@ public class MainLetraB{
         item[i] = new ItemMochila();
       }
   
-      item = UtilLs.geraVetor(quantItems, false, capacidadeAEscolher);
+      item = Utils.geraVetor(quantItems, false, capacidadeAEscolher);
       int tam=item.length;
       
       for (int i = 0; i < item.length; i++) {
@@ -28,11 +28,11 @@ public class MainLetraB{
       }
   
      // UtilLs.bolhaInvertido(item);
-      UtilLs.quicksort(item, 0, tam-1); 
+      Guloso.quicksort(item, 0, tam-1);
   
            //System.out.println("\niten(s) adicionado(s) na mochila :");   *********VOLTA N APAGA
       for (int index = 0; index < item.length; index++) {
-        m.adicionar(item[index]);
+        m.add(item[index]);
       }
       
      

@@ -2,7 +2,6 @@ public class ItemMochila {
 
     private int valor;
     private int peso;
-    private double razao;
 
     public int getValor() {
         return valor;
@@ -21,16 +20,11 @@ public class ItemMochila {
     }
 
     public double getRazao() {
-        this.razao = (double) this.valor / this.peso;
-        return this.razao;
-    }
-
-    public void setRazao(double razao) {
-        this.razao = razao;
+        return (double) this.valor / this.peso;
     }
 
     public String toString() {
-        return "peso : " + peso + " valor: " + valor + " razao: " + this.razao;
+        return "peso : " + peso + " valor: " + valor + " razao: " + this.getRazao();
     }
 
 }
