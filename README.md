@@ -1,1 +1,1 @@
-# fpaa_trabalhoPratico_mochila
+# Trabalho prático em grupo - Parte I
